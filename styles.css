@@ -1,49 +1,52 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+:root {
+  --accent: #673ab7;
+  --bg: #fafafa;
+  --dark: #333;
 }
 
 body {
-  background: #fdfdfd;
-  color: #333;
-  line-height: 1.6;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--dark);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-header.hero {
+.hero {
   text-align: center;
-  padding: 4rem 2rem;
-  background: #f6f6f6;
+  padding: 4rem 1rem;
+  background: var(--accent);
+  color: white;
 }
 
-header.hero h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+.hero h1 {
+  font-size: 2.2rem;
 }
 
 .button {
-  display: inline-block;
   margin-top: 1.5rem;
   padding: 0.75rem 1.5rem;
-  background: #333;
-  color: white;
+  background: white;
+  color: var(--accent);
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 10px;
+  font-weight: bold;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
-  padding: 1rem 2rem;
-  background: #333;
+  align-items: center;
+  background: var(--dark);
   color: white;
+  padding: 1rem 2rem;
 }
 
 .navbar a {
   color: white;
   text-decoration: none;
-  margin-left: 1rem;
 }
 
 .gallery {
@@ -51,39 +54,52 @@ header.hero h1 {
   grid-template-columns: 1fr;
   gap: 1.5rem;
   padding: 2rem;
-}
-
-.cat-card {
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  overflow: hidden;
-  padding: 1rem;
-  text-align: center;
+  flex-grow: 1;
 }
 
 .cat-card img {
-  max-width: 100%;
-  border-radius: 6px;
-  margin-bottom: 1rem;
+  width: 100%;
+  border-radius: 8px;
 }
 
-footer {
+figure {
+  margin: 0;
+}
+
+figcaption {
+  margin-top: 0.5rem;
   text-align: center;
-  padding: 2rem 1rem;
-  background: #eee;
-  margin-top: 2rem;
-  font-size: 0.9rem;
 }
 
-/* Responsive Design */
-@media (min-width: 600px) {
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.carousel img {
+  width: 300px;
+  border-radius: 10px;
+}
+
+.sticky-footer {
+  margin-top: auto;
+  padding: 1rem;
+  background: #e0e0e0;
+  text-align: center;
+}
+
+/* Tablet View */
+@media (min-width: 768px) {
   .gallery {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (min-width: 900px) {
+/* Desktop View */
+@media (min-width: 1024px) {
   .gallery {
     grid-template-columns: repeat(4, 1fr);
   }
